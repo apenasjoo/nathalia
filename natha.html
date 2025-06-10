@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma pergunta importante...</title>
+    <style>
+        /* Estilos para deixar a página bonita */
+        body {
+            background-color: #fce4ec; /* Um rosa bem clarinho */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden; /* Evita barras de rolagem quando o botão foge */
+        }
+
+        .container {
+            max-width: 90%;
+        }
+
+        h1 {
+            color: #e91e63; /* Rosa mais forte */
+            font-size: 3.5em; /* Tamanho grande para a declaração */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p {
+            color: #333;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        .botoes {
+            margin-top: 40px;
+        }
+
+        button {
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 0 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            color: white;
+        }
+
+        #btn-sim {
+            background-color: #4CAF50; /* Verde */
+        }
+
+        #btn-sim:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        #btn-nao {
+            background-color: #f44336; /* Vermelho */
+            position: absolute; /* Posição absoluta para poder mover! */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Eu te amo, Nathalia! ❤️</h1>
+        <p>Você me ama?</p>
+        <div class="botoes">
+            <button id="btn-sim" onclick="alert('Uhuuul! Eu também te amo muito! ❤️')">Sim</button>
+            <button id="btn-nao">Não</button>
+        </div>
+    </div>
+
+    <script>
+        // A mágica acontece aqui!
+        const botaoNao = document.getElementById('btn-nao');
+
+        // Adiciona um "ouvinte" para o evento de passar o mouse por cima
+        botaoNao.addEventListener('mouseover', function() {
+            // Pega o tamanho da janela do navegador
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+
+            // Pega o tamanho do botão
+            const larguraBotao = botaoNao.offsetWidth;
+            const alturaBotao = botaoNao.offsetHeight;
+
+            // Gera uma posição aleatória, garantindo que o botão não saia da tela
+            const novaPosicaoX = Math.floor(Math.random() * (larguraJanela - larguraBotao));
+            const novaPosicaoY = Math.floor(Math.random() * (alturaJanela - alturaBotao));
+
+            // Aplica a nova posição ao botão "Não"
+            botaoNao.style.left = `${novaPosicaoX}px`;
+            botaoNao.style.top = `${novaPosicaoY}px`;
+        });
+    </script>
+
+</body>
+</html>
