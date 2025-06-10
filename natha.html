@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma pergunta importante...</title>
     <style>
-        /* Estilos para deixar a página bonita */
+        
         body {
-            background-color: #fce4ec; /* Um rosa bem clarinho */
+            background-color: #fce4ec; 
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -15,7 +15,7 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden; /* Evita barras de rolagem quando o botão foge */
+            overflow: hidden; 
         }
 
         .container {
@@ -23,8 +23,8 @@
         }
 
         h1 {
-            color: #e91e63; /* Rosa mais forte */
-            font-size: 3.5em; /* Tamanho grande para a declaração */
+            color: #e91e63; 
+            font-size: 3.5em; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
@@ -50,7 +50,7 @@
         }
 
         #btn-sim {
-            background-color: #4CAF50; /* Verde */
+            background-color: #4CAF50; 
         }
 
         #btn-sim:hover {
@@ -59,8 +59,8 @@
         }
 
         #btn-nao {
-            background-color: #f44336; /* Vermelho */
-            position: absolute; /* Posição absoluta para poder mover! */
+            background-color: #f44336; 
+            position: absolute; 
         }
     </style>
 </head>
@@ -76,24 +76,24 @@
     </div>
 
     <script>
-        // A mágica acontece aqui!
+        
         const botaoNao = document.getElementById('btn-nao');
 
-        // Adiciona um "ouvinte" para o evento de passar o mouse por cima
+        
         botaoNao.addEventListener('mouseover', function() {
-            // Pega o tamanho da janela do navegador
+         
             const larguraJanela = window.innerWidth;
             const alturaJanela = window.innerHeight;
 
-            // Pega o tamanho do botão
+           
             const larguraBotao = botaoNao.offsetWidth;
             const alturaBotao = botaoNao.offsetHeight;
 
-            // Gera uma posição aleatória, garantindo que o botão não saia da tela
+          
             const novaPosicaoX = Math.floor(Math.random() * (larguraJanela - larguraBotao));
             const novaPosicaoY = Math.floor(Math.random() * (alturaJanela - alturaBotao));
 
-            // Aplica a nova posição ao botão "Não"
+            
             botaoNao.style.left = `${novaPosicaoX}px`;
             botaoNao.style.top = `${novaPosicaoY}px`;
         });
